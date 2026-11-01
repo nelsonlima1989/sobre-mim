@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio pessoal de Nelson Lima da Costa Junior — Desenvolvedor Full Stack">
+    <meta name="theme-color" content="#2563eb">
+    <title>Nelson Lima da Costa Junior — Desenvolvedor Full Stack</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+<body>
+    <header class="header" role="banner">
+        <div class="container header__inner">
+            <a href="#inicio" class="header__logo" aria-label="Ir para o início">NLCJ</a>
+            <nav class="nav" role="navigation" aria-label="Navegação principal">
+                <ul class="nav__list">
+                    <li><a href="#inicio" class="nav__link">Início</a></li>
+                    <li><a href="#sobre" class="nav__link">Sobre Mim</a></li>
+                    <li><a href="#experiencia" class="nav__link">Experiência</a></li>
+                    <li><a href="#projetos" class="nav__link">Projetos</a></li>
+                    <li><a href="#tecnologias" class="nav__link">Tecnologias</a></li>
+                    <li><a href="#formacao" class="nav__link">Formação</a></li>
+                    <li><a href="#contato" class="nav__link">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main role="main">
+        <!-- 1. Início -->
+        <section id="inicio" class="hero" aria-labelledby="inicio-titulo">
+            <div class="container hero__inner">
+                <div class="hero__content">
+                    <h1 id="inicio-titulo" class="hero__title">Nelson Lima da Costa Junior</h1>
+                    <p class="hero__subtitle">Desenvolvedor Full Stack | C#/.NET • Node.js • TypeScript • React • SQL</p>
+                    <div class="hero__actions">
+                        <a href="#contato" class="btn btn--primary">Entrar em Contato</a>
+                        <a href="#projetos" class="btn btn--secondary">Ver Projetos</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Sobre Mim -->
+        <section id="sobre" class="section section--sobre" aria-labelledby="sobre-titulo">
+            <div class="container">
+                <header class="section__header">
+                    <h2 id="sobre-titulo" class="section__title">Sobre Mim</h2>
+                </header>
+                <div class="section__content">
+                    <p class="section__text">
+                        Sou Desenvolvedor Full Stack, com mais de 10 anos de experiência em Tecnologia da Informação, incluindo infraestrutura, redes, suporte técnico e desenvolvimento de software.
+                    </p>
+                    <p class="section__text">
+                        Minha experiência profissional em desenvolvimento envolve construção e manutenção de aplicações web, desenvolvimento de funcionalidades, integração de APIs REST e utilização de bancos de dados relacionais.
+                    </p>
+                    <p class="section__text">
+                        Tenho interesse em arquitetura de software, Clean Code, SOLID e desenvolvimento de aplicações eficientes, escaláveis e de fácil manutenção.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Experiência Profissional -->
+        <section id="experiencia" class="section section--experiencia" aria-labelledby="experiencia-titulo">
+            <div class="container">
+                <header class="section__header">
+                    <h2 id="experiencia-titulo" class="section__title">Experiência Profissional</h2>
+                </header>
+                <div class="section__content">
+                    <article class="experience-card">
+                        <header class="experience-card__header">
+                            <h3 class="experience-card__role">Estagiário de Desenvolvimento Full Stack</h3>
+                            <div class="experience-card__meta">
+                                <span class="experience-card__company">Level33</span>
+                                <time class="experience-card__period" datetime="2025-08/2026-08">Agosto 2025 — Agosto 2026</time>
+                            </div>
+                        </header>
+                        <div class="experience-card__description">
+                            <p>Atuação no desenvolvimento de aplicações reais, trabalhando com Frontend, Backend, integrações e bancos de dados. Participação no ciclo completo de desenvolvimento: levantamento de requisitos, implementação, testes, deploy e manutenção.</p>
+                        </div>
+                        <ul class="experience-card__highlights" aria-label="Principais atividades">
+                            <li>Desenvolvimento de funcionalidades Frontend e Backend</li>
+                            <li>Integração com APIs REST e serviços externos</li>
+                            <li>Modelagem e consultas em bancos de dados relacionais</li>
+                            <li>Colaboração em squad ágil com práticas de Clean Code e SOLID</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Projetos -->
+        <section id="projetos" class="section section--projetos" aria-labelledby="projetos-titulo">
+            <div class="container">
+                <header class="section__header">
+                    <h2 id="projetos-titulo" class="section__title">Projetos</h2>
+                </header>
+                <div class="section__content">
+                    <article class="project-card">
+                        <header class="project-card__header">
+                            <h3 class="project-card__title">Guild Hunters Bot</h3>
+                            <span class="project-card__type">Projeto Pessoal — Discord</span>
+                        </header>
+                        <div class="project-card__description">
+                            <p>Projeto desenvolvido para gerenciamento e automação de eventos em servidores Discord.</p>
+                        </div>
+                        <div class="project-card__tech">
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Docker Compose</span>
+                            <span class="tech-tag">Git</span>
+                            <span class="tech-tag">VPS</span>
+                        </div>
+                        <ul class="project-card__activities" aria-label="Atividades realizadas">
+                            <li>Desenvolvimento Backend completo</li>
+                            <li>Integração com banco de dados PostgreSQL</li>
+                            <li>Automação de eventos e agendamentos</li>
+                            <li>Organização do ambiente de desenvolvimento</li>
+                            <li>Deploy e manutenção da aplicação em VPS</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Tecnologias -->
+        <section id="tecnologias" class="section section--tecnologias" aria-labelledby="tecnologias-titulo">
+            <div class="container">
+                <header class="section__header">
+                    <h2 id="tecnologias-titulo" class="section__title">Tecnologias</h2>
+                </header>
+                <div class="section__content">
+                    <div class="tech-categories">
+                        <div class="tech-category">
+                            <h3 class="tech-category__title">Competências Atuais</h3>
+                            <ul class="tech-list" aria-label="Tecnologias que domino">
+                                <li class="tech-list__item">C# / .NET</li>
+                                <li class="tech-list__item">Node.js</li>
+                                <li class="tech-list__item">TypeScript</li>
+                                <li class="tech-list__item">React</li>
+                                <li class="tech-list__item">SQL / PostgreSQL</li>
+                                <li class="tech-list__item">Git / GitHub</li>
+                                <li class="tech-list__item">Docker</li>
+                                <li class="tech-list__item">APIs REST</li>
+                                <li class="tech-list__item">Clean Code / SOLID</li>
+                            </ul>
+                        </div>
+                        <div class="tech-category">
+                            <h3 class="tech-category__title">Tecnologias para Aprofundar</h3>
+                            <ul class="tech-list" aria-label="Tecnologias de interesse">
+                                <li class="tech-list__item tech-list__item--interest">Java / Spring Boot</li>
+                                <li class="tech-list__item tech-list__item--interest">Arquitetura .NET</li>
+                                <li class="tech-list__item tech-list__item--interest">Next.js</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Formação -->
+        <section id="formacao" class="section section--formacao" aria-labelledby="formacao-titulo">
+            <div class="container">
+                <header class="section__header">
+                    <h2 id="formacao-titulo" class="section__title">Formação</h2>
+                </header>
+                <div class="section__content">
+                    <div class="education-grid">
+                        <article class="education-card">
+                            <header class="education-card__header">
+                                <h3 class="education-card__title">Análise e Desenvolvimento de Sistemas</h3>
+                                <span class="education-card__institution">Universidade Estácio de Sá</span>
+                            </header>
+                            <div class="education-card__meta">
+                                <time class="education-card__period" datetime="2024">Em andamento</time>
+                            </div>
+                        </article>
+                        <article class="education-card">
+                            <header class="education-card__header">
+                                <h3 class="education-card__title">Acelera ZG — 10ª Edição</h3>
+                                <span class="education-card__institution">Programa de Formação Full Stack</span>
+                            </header>
+                            <div class="education-card__meta">
+                                <time class="education-card__period" datetime="2026">2026 — Em andamento</time>
+                            </div>
+                            <p class="education-card__description">
+                                Programa de formação prática em desenvolvimento Full Stack, envolvendo Java, Groovy, TypeScript, PostgreSQL, APIs REST, testes automatizados, Clean Code, SOLID e colaboração em squad.
+                            </p>                            
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Contato -->
+        <section id="contato" class="section section--contato" aria-labelledby="contato-titulo">
+            <div class="container">
+                <header class="section__header">
+                    <h2 id="contato-titulo" class="section__title">Contato</h2>
+                </header>
+                <div class="section__content">
+                    <p class="section__text">Estou aberto a novas oportunidades e conexões profissionais. Sinta-se à vontade para entrar em contato.</p>
+                    <ul class="contact-links" role="list" aria-label="Links de contato">
+                        <li>
+                            <a href="https://github.com/nelsonlima1989" class="contact-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub (abre em nova aba)">
+                                <svg class="contact-link__icon" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                                <span>GitHub</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/nelsonlima1989/" class="contact-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (abre em nova aba)">
+                                <svg class="contact-link__icon" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                <span>LinkedIn</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container footer__inner">
+            <p class="footer__copyright">&copy; 2026 Nelson Lima da Costa Junior. Todos os direitos reservados.</p>
+            <p class="footer__note">Desenvolvido com HTML5, CSS3 e JavaScript puro.</p>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

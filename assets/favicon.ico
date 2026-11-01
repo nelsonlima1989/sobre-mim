@@ -1,0 +1,12 @@
+# Placeholder para favicon.ico
+
+Este é um arquivo de placeholder. Substitua por um favicon.ico real (32x32 e 16x16 pixels).
+
+Para gerar:
+1. Crie um SVG ou PNG 32x32
+2. Use ferramentas como:
+   - https://realfavicongenerator.net/
+   - https://favicon.io/
+   - ImageMagick: `convert favicon.svg -define icon:auto-resize=32,16 favicon.ico`
+
+O favicon.svg já está presente e funciona em navegadores modernos.
