@@ -1,68 +1,100 @@
 /**
- * script.js - Funcionalidades JavaScript para o portfólio
- * Versão inicial: funcionalidades básicas apenas
+ * script.js - Interações do portfólio
+ *
+ * - Menu de navegação recolhível em telas pequenas (acessível por teclado)
+ * - Destaque do link da seção visível (aria-current)
+ * - Sombra do header ao rolar a página
+ *
+ * O scroll suave e o deslocamento sob o header fixo são feitos em CSS
+ * (scroll-behavior e scroll-padding-top), respeitando prefers-reduced-motion.
  */
 
+// Deve ser igual ao breakpoint de navegação em linha definido em style.css.
+const DESKTOP_QUERY = '(min-width: 768px)';
+
 // ========================================
-// UTILITÁRIOS
+// MENU MOBILE
 // ========================================
 
 /**
- * Verifica se o usuário prefere movimento reduzido
- * @returns {boolean}
+ * Menu recolhível para telas < 768px.
+ * Botão com aria-expanded; Esc, clique em link, clique fora e saída do foco fecham o menu.
  */
-function prefersReducedMotion() {
-    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-}
+function initMobileMenu() {
+    const header = document.querySelector('.header');
+    const toggle = header?.querySelector('.menu-toggle');
+    const nav = header?.querySelector('.nav');
+    if (!toggle || !nav) return;
 
-/**
- * Scroll suave para elemento (fallback para navegadores sem suporte nativo)
- * @param {string} targetId - ID do elemento alvo (ex: '#sobre')
- */
-function smoothScrollTo(targetId) {
-    const target = document.querySelector(targetId);
-    if (!target) return;
+    const desktop = window.matchMedia(DESKTOP_QUERY);
 
-    const headerHeight = document.querySelector('.header')?.offsetHeight || 0;
-    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-
-    if (prefersReducedMotion()) {
-        window.scrollTo(0, targetPosition);
-        return;
+    function setOpen(isOpen) {
+        toggle.setAttribute('aria-expanded', String(isOpen));
+        nav.classList.toggle('is-open', isOpen);
     }
 
-    window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth'
+    function isOpen() {
+        return toggle.getAttribute('aria-expanded') === 'true';
+    }
+
+    toggle.addEventListener('click', () => setOpen(!isOpen()));
+
+    nav.addEventListener('click', (event) => {
+        if (event.target.closest('a')) setOpen(false);
     });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && isOpen()) {
+            setOpen(false);
+            toggle.focus();
+        }
+    });
+
+    document.addEventListener('click', (event) => {
+        if (isOpen() && !header.contains(event.target)) setOpen(false);
+    });
+
+    header.addEventListener('focusout', (event) => {
+        if (isOpen() && event.relatedTarget && !header.contains(event.relatedTarget)) {
+            setOpen(false);
+        }
+    });
+
+    // Ao ampliar a janela para o layout desktop, o estado do menu é reiniciado
+    desktop.addEventListener('change', () => setOpen(false));
 }
 
 // ========================================
-// NAVEGAÇÃO SUAVE
+// LINK ATIVO NA NAVEGAÇÃO
 // ========================================
 
 /**
- * Inicializa navegação suave para links internos
+ * Marca com aria-current="true" o link da seção atualmente visível.
  */
-function initSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
+function initActiveNavLink() {
+    if (!('IntersectionObserver' in window)) return;
 
-            const target = document.querySelector(targetId);
-            if (target) {
-                e.preventDefault();
-                smoothScrollTo(targetId);
+    const links = new Map();
+    document.querySelectorAll('.nav__link[href^="#"]').forEach((link) => {
+        links.set(link.getAttribute('href').slice(1), link);
+    });
 
-                // Atualiza URL sem recarregar
-                history.pushState(null, '', targetId);
-
-                // Foco para acessibilidade
-                target.setAttribute('tabindex', '-1');
-                target.focus({ preventScroll: true });
-            }
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            links.forEach((link, id) => {
+                if (id === entry.target.id) {
+                    link.setAttribute('aria-current', 'true');
+                } else {
+                    link.removeAttribute('aria-current');
+                }
+            });
         });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+
+    links.forEach((_, id) => {
+        const section = document.getElementById(id);
+        if (section) observer.observe(section);
     });
 }
 
@@ -71,75 +103,23 @@ function initSmoothScroll() {
 // ========================================
 
 /**
- * Adiciona sombra ao header ao rolar a página
+ * Adiciona a classe is-scrolled ao header ao rolar a página.
  */
 function initHeaderScrollEffect() {
     const header = document.querySelector('.header');
     if (!header) return;
 
-    let lastScrollY = window.scrollY;
-    const threshold = 10;
+    const update = () => header.classList.toggle('is-scrolled', window.scrollY > 10);
 
-    function handleScroll() {
-        const currentScrollY = window.scrollY;
-
-        if (currentScrollY > threshold) {
-            header.style.boxShadow = 'var(--shadow-md)';
-        } else {
-            header.style.boxShadow = 'none';
-        }
-
-        lastScrollY = currentScrollY;
-    }
-
-    // Throttle para performance
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-        if (!ticking) {
-            window.requestAnimationFrame(() => {
-                handleScroll();
-                ticking = false;
-            });
-            ticking = true;
-        }
-    }, { passive: true });
+    update();
+    window.addEventListener('scroll', update, { passive: true });
 }
 
 // ========================================
 // INICIALIZAÇÃO
 // ========================================
 
-/**
- * Inicializa todas as funcionalidades
- */
-function init() {
-    // Aguarda DOM estar pronto
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-        return;
-    }
-
-    initSmoothScroll();
-    initHeaderScrollEffect();
-
-    // Log de inicialização (apenas desenvolvimento)
-    console.log('Portfólio inicializado com sucesso.');
-}
-
-// Inicia a aplicação
-init();
-
-// ========================================
-// EXPORTAÇÕES PARA FUTURAS ETAPAS
-// ========================================
-
-// Funções que serão expandidas nas próximas etapas:
-// - initThemeToggle() - Alternância de tema claro/escuro
-// - initMobileMenu() - Menu hambúrguer para mobile
-// - initAnimations() - Animações de entrada (IntersectionObserver)
-// - initProjectFilters() - Filtros de projetos (se aplicável)
-
-window.Portfolio = {
-    smoothScrollTo,
-    prefersReducedMotion
-};
+// O script é carregado com "defer": o DOM já está pronto aqui.
+initMobileMenu();
+initActiveNavLink();
+initHeaderScrollEffect();

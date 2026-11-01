@@ -6,7 +6,7 @@
 
 ## 📋 Descrição
 
-Este projeto é um portfólio pessoal responsivo e acessível, criado para apresentar minha trajetória profissional, experiências, projetos, tecnologias e formação. O design é moderno, limpo e compatível com GitHub Pages.
+Portfólio pessoal de página única, responsivo e com foco em acessibilidade, para apresentar trajetória profissional, experiência, projetos, tecnologias e formação. Os caminhos são relativos, o que o deixa pronto para ser servido por qualquer hospedagem estática (incluindo GitHub Pages — **ainda não publicado**).
 
 ---
 
@@ -15,34 +15,41 @@ Este projeto é um portfólio pessoal responsivo e acessível, criado para apres
 | Categoria | Tecnologias |
 |-----------|-------------|
 | **Estrutura** | HTML5 semântico |
-| **Estilos** | CSS3 (Custom Properties, Flexbox, Grid, Mobile-First) |
-| **Interatividade** | JavaScript ES6+ (Vanilla) |
-| **Fontes** | Inter (Google Fonts) |
+| **Estilos** | CSS3 (Custom Properties, Flexbox, Grid, `clamp()`, abordagem mobile-first) |
+| **Interatividade** | JavaScript ES6+ (Vanilla), sem bibliotecas |
+| **Fontes** | Inter, carregada do Google Fonts (único recurso externo) com `font-display: swap` |
 | **Ícones** | SVG inline |
-| **Deploy** | GitHub Pages |
 
 ---
 
 ## ✨ Funcionalidades Implementadas
 
-- ✅ **HTML Semântico** — Estrutura acessível com landmarks ARIA (`header`, `main`, `nav`, `section`, `article`, `footer`, `time`)
-- ✅ **Design Responsivo** — Mobile-first, breakpoints em 360px, 480px e 768px
-- ✅ **Tema Claro/Escuro** — Suporte nativo a `prefers-color-scheme` (detecção automática do sistema)
-- ✅ **Acessibilidade** — Contraste WCAG AA, foco visível, navegação por teclado, `prefers-reduced-motion`, labels ARIA
-- ✅ **Navegação Suave** — Scroll suave nativo com fallback JS para links internos
-- ✅ **Header Fixo** — Com efeito de sombra ao rolar a página
-- ✅ **Performance** — Sem dependências externas, CSS/JS mínimos, fonte com `preconnect`
-- ✅ **Print Friendly** — Estilos otimizados para impressão
+- ✅ **HTML semântico** — `header`, `nav`, `main`, `section`, `article`, `footer`, `time`, títulos hierárquicos (um único `h1`)
+- ✅ **Design responsivo mobile-first** — estilos base para telas pequenas e ajustes com `min-width` em 480px e 768px; tipografia fluida com `clamp()`
+- ✅ **Menu de navegação recolhível em telas < 768px** — botão com `aria-expanded`/`aria-controls`; fecha com `Esc` (devolvendo o foco ao botão), ao escolher um link, ao clicar fora ou ao sair do foco; links em linha a partir de 768px. Sem JavaScript, os links permanecem visíveis e quebram de linha
+- ✅ **Tema claro/escuro automático** — segue `prefers-color-scheme` do sistema (não há botão de alternância)
+- ✅ **Acessibilidade**
+  - Link "Pular para o conteúdo"
+  - Foco visível (`:focus-visible`) e navegação por teclado
+  - Alvos de toque de pelo menos 44px nos botões de menu/contato e nos links do menu mobile
+  - `aria-current` no link da seção visível
+  - `prefers-reduced-motion` respeitado (scroll suave só quando permitido)
+  - Cores com contraste calculado ≥ 4,5:1 para texto e ≥ 3:1 para foco/bordas, nos dois temas (verificado por script — ver "Verificações realizadas")
+- ✅ **Navegação suave** — `scroll-behavior` e `scroll-padding-top` em CSS, de modo que o título da seção não fica sob o header fixo
+- ✅ **Header fixo** — com sombra ao rolar a página
+- ✅ **Links externos seguros** — GitHub e LinkedIn com `target="_blank"` e `rel="noopener noreferrer"`
+- ✅ **Favicon** — `assets/favicon.svg` (vetorial) e `assets/favicon.ico` válido (16, 32 e 48 px)
+- ✅ **Impressão** — oculta navegação e rodapé e força tema claro
 
-## 🔮 Funcionalidades Planejadas (Próximas Etapas)
+## 🔮 Funcionalidades Planejadas
 
-- [ ] **Alternância manual de tema** — Botão light/dark no header com persistência em `localStorage`
-- [ ] **Menu mobile (hambúrguer)** — Navegação colapsável para telas ≤ 768px
+- [ ] **Alternância manual de tema** — botão claro/escuro com persistência em `localStorage` (o CSS já aceita `data-theme`)
 - [ ] **Animações de entrada** — `IntersectionObserver` para fade-in/slide-up nas seções
-- [ ] **Favicon real** — Gerar favicons a partir de identidade visual própria
-- [ ] **Meta tags Open Graph** — Para compartilhamento em redes sociais
-- [ ] **Sitemap.xml / robots.txt** — SEO técnico
-- [ ] **Validação W3C** — HTML e CSS válidos
+- [ ] **Meta tags Open Graph** — para compartilhamento em redes sociais
+- [ ] **`sitemap.xml` / `robots.txt`** — SEO técnico
+- [ ] **Validação W3C** — HTML e CSS
+- [ ] **Publicação no GitHub Pages**
+- [ ] **Licença** — escolher e adicionar um arquivo `LICENSE`
 
 ---
 
@@ -51,14 +58,13 @@ Este projeto é um portfólio pessoal responsivo e acessível, criado para apres
 ```
 sobre-mim/
 ├── index.html          # Página principal (HTML5 semântico)
-├── style.css           # Estilos completos + responsividade + temas
-├── script.js           # Interações (scroll suave, header scroll, base para próximas etapas)
+├── style.css           # Estilos, temas claro/escuro e responsividade
+├── script.js           # Menu mobile, link ativo na navegação, sombra do header
 ├── README.md           # Esta documentação
-├── PROMPTS.md          # Registro cronológico dos prompts enviados ao agente
-├── assets/
-│   ├── favicon.ico     # Favicon tradicional (placeholder)
-│   └── favicon.svg     # Favicon vetorial moderno (placeholder)
-└── .gitignore          # Arquivos ignorados pelo Git (opcional)
+├── PROMPTS.md          # Registro cronológico dos prompts enviados aos agentes
+└── assets/
+    ├── favicon.ico     # Favicon tradicional (16, 32 e 48 px)
+    └── favicon.svg     # Favicon vetorial
 ```
 
 ---
@@ -67,21 +73,17 @@ sobre-mim/
 
 ### Opção 1: Abrir diretamente no navegador
 ```bash
-# Navegue até o diretório do projeto
 cd sobre-mim
 
-# Abra o index.html no navegador padrão
-# Linux:
+# Linux
 xdg-open index.html
-
-# macOS:
+# macOS
 open index.html
-
-# Windows:
+# Windows
 start index.html
 ```
 
-### Opção 2: Servidor local (recomendado para desenvolvimento)
+### Opção 2: Servidor local
 ```bash
 # Com Python 3
 python3 -m http.server 8000
@@ -96,36 +98,35 @@ Acesse `http://localhost:8000` no navegador.
 
 ---
 
-## 🌐 Publicação no GitHub Pages (Não Implementado)
+## 🌐 Publicação (GitHub Pages) — não realizada
 
-O projeto está preparado para deploy no GitHub Pages (caminhos relativos, `index.html` na raiz), mas **ainda não foi publicado**.
+O projeto usa caminhos relativos e tem `index.html` na raiz, mas **ainda não foi publicado**. Quando for:
 
-Quando publicado, o processo será:
 1. Faça push do repositório para o GitHub
 2. Vá em **Settings > Pages**
 3. Em **Source**, selecione **Deploy from a branch**
-4. Branch: `main` / `root`
-5. Clique em **Save**
-6. O site estará disponível em `https://nelsonlima1989.github.io/sobre-mim/`
+4. Branch: `main` / `root`, e clique em **Save**
+5. O endereço esperado é `https://nelsonlima1989.github.io/sobre-mim/`
 
 ---
 
 ## ♿ Acessibilidade
 
-- **Contraste**: Cores testadas para WCAG AA (4.5:1 texto normal, 3:1 texto grande)
-- **Navegação por teclado**: Todos os elementos interativos são focáveis
-- **Foco visível**: Outline claro em links, botões e elementos interativos
-- **Landmarks ARIA**: `header`, `main`, `nav`, `section`, `footer`, `article`
-- **Labels**: `aria-label` em navegação, links externos, listas
-- **Redução de movimento**: Respeita `prefers-reduced-motion`
-- **Semântica**: Tags HTML5 apropriadas (`time`, `address`, `article`, etc.)
+- **Contraste**: pares texto/fundo calculados para os dois temas (≥ 4,5:1 para texto; ≥ 3:1 para foco e bordas de componentes)
+- **Teclado**: todos os elementos interativos são focáveis; `Esc` fecha o menu mobile; link para pular ao conteúdo
+- **Foco visível**: contorno em links e botões
+- **Landmarks**: `header`, `nav`, `main`, `footer`; seções ligadas aos seus títulos via `aria-labelledby`
+- **ARIA**: `aria-expanded`/`aria-controls` no menu, `aria-current` na seção ativa, rótulos em listas e em links externos ("abre em nova aba")
+- **Movimento reduzido**: respeita `prefers-reduced-motion`
+
+> Uma avaliação com leitor de tela e uma auditoria automatizada (Lighthouse/axe) ainda **não foram realizadas**.
 
 ---
 
 ## 🎨 Personalização
 
 ### Cores (CSS Custom Properties)
-Edite as variáveis em `:root` no `style.css`:
+Edite as variáveis no início do `style.css`. Os valores do tema escuro aparecem duas vezes (no `@media (prefers-color-scheme: dark)` e em `[data-theme="dark"]`) e devem ser mantidos iguais.
 
 ```css
 :root {
@@ -136,45 +137,46 @@ Edite as variáveis em `:root` no `style.css`:
 }
 ```
 
+Ao trocar cores, confira o contraste (mínimo 4,5:1 para texto).
+
 ### Conteúdo
-Edite o `index.html` para alterar:
-- Nome e título (hero)
-- Textos das seções
-- Experiências, projetos, formação
-- Links de contato (GitHub, LinkedIn)
+Edite o `index.html` para alterar nome, textos das seções, experiências, projetos, formação e links de contato.
 
 ### Favicon
-Substitua os arquivos em `assets/`:
-- `favicon.ico` (32x32, 16x16)
-- `favicon.svg` (vetorial, qualquer tamanho)
+Substitua os arquivos em `assets/` (`favicon.svg` e `favicon.ico` com 16/32/48 px).
 
 ---
 
 ## 📱 Responsividade
 
-| Breakpoint | Dispositivo | Ajustes Principais |
-|------------|-------------|-------------------|
-| `> 768px` | Desktop | Layout completo, grid de 2 colunas |
-| `≤ 768px` | Tablet | Grid de 1 coluna, espaçamentos reduzidos |
-| `≤ 480px` | Mobile | Tipografia menor, botões full-width, padding reduzido |
+Abordagem mobile-first: os estilos base valem para telas pequenas e cada breakpoint só acrescenta ajustes.
+
+| Largura | Comportamento |
+|---------|---------------|
+| base (< 480px) | Uma coluna, botões empilhados (largura total até 280px), menu recolhível |
+| `≥ 480px` | Botões do hero lado a lado |
+| `≥ 768px` | Navegação em linha, grades de cards em colunas automáticas, mais espaçamento |
 
 ---
 
-## 🔧 Próximas Etapas (Roadmap)
+## 🧪 Verificações realizadas
 
-- [ ] **Alternância de tema** — Botão light/dark com persistência em `localStorage`
-- [ ] **Menu mobile** — Hamburger menu para navegação em telas pequenas
-- [ ] **Animações de entrada** — `IntersectionObserver` para fade-in/slide-up
-- [ ] **Favicon real** — Gerar favicons a partir de logo/identidade visual
-- [ ] **Meta tags Open Graph** — Para compartilhamento em redes sociais
-- [ ] **Sitemap.xml / robots.txt** — SEO técnico
-- [ ] **Validação W3C** — HTML e CSS válidos
+Executadas por scripts locais (sem instalar dependências):
+
+- Sintaxe do `script.js` (`node --check`)
+- Cálculo de contraste dos pares de cores nos temas claro e escuro
+- Consistência do HTML: IDs únicos, âncoras internas com destino, `aria-controls`/`aria-labelledby` válidos, arquivos referenciados existentes
+- CSS: chaves balanceadas e todas as variáveis `var()` definidas
+- Lógica do menu mobile (abrir, fechar, `Esc`, clique fora, saída do foco, mudança de breakpoint) com DOM simulado
+- Favicon `.ico` reconhecido como ícone válido de múltiplas resoluções
+
+**Ainda não verificado:** renderização em navegador real (larguras 320–1440px, ausência de rolagem horizontal), navegação por teclado ponta a ponta, console do navegador, leitor de tela e validação W3C.
 
 ---
 
 ## 📄 Licença
 
-Este projeto está sob a licença MIT. Sinta-se livre para usar como base para seu próprio portfólio.
+Ainda não definida: o repositório não possui arquivo `LICENSE`.
 
 ---
 

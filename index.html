@@ -4,20 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfólio pessoal de Nelson Lima da Costa Junior — Desenvolvedor Full Stack">
-    <meta name="theme-color" content="#2563eb">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1e293b" media="(prefers-color-scheme: dark)">
     <title>Nelson Lima da Costa Junior — Desenvolvedor Full Stack</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" sizes="16x16 32x32">
+    <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-    <header class="header" role="banner">
+    <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
+    <header class="header">
         <div class="container header__inner">
             <a href="#inicio" class="header__logo" aria-label="Ir para o início">NLCJ</a>
-            <nav class="nav" role="navigation" aria-label="Navegação principal">
+            <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="menu-principal">
+                <span class="menu-toggle__icon" aria-hidden="true"></span>
+                <span class="menu-toggle__label">Menu</span>
+            </button>
+            <nav class="nav" id="menu-principal" aria-label="Navegação principal">
                 <ul class="nav__list">
                     <li><a href="#inicio" class="nav__link">Início</a></li>
                     <li><a href="#sobre" class="nav__link">Sobre Mim</a></li>
@@ -31,7 +40,7 @@
         </div>
     </header>
 
-    <main role="main">
+    <main id="conteudo" tabindex="-1">
         <!-- 1. Início -->
         <section id="inicio" class="hero" aria-labelledby="inicio-titulo">
             <div class="container hero__inner">
@@ -78,7 +87,7 @@
                             <h3 class="experience-card__role">Estagiário de Desenvolvimento Full Stack</h3>
                             <div class="experience-card__meta">
                                 <span class="experience-card__company">Level33</span>
-                                <time class="experience-card__period" datetime="2025-08/2026-08">Agosto 2025 — Agosto 2026</time>
+                                <span class="experience-card__period"><time datetime="2025-08">Agosto 2025</time> — <time datetime="2026-08">Agosto 2026</time></span>
                             </div>
                         </header>
                         <div class="experience-card__description">
@@ -179,7 +188,7 @@
                                 <span class="education-card__institution">Universidade Estácio de Sá</span>
                             </header>
                             <div class="education-card__meta">
-                                <time class="education-card__period" datetime="2024">Em andamento</time>
+                                <span class="education-card__period">Em andamento</span>
                             </div>
                         </article>
                         <article class="education-card">
@@ -188,11 +197,11 @@
                                 <span class="education-card__institution">Programa de Formação Full Stack</span>
                             </header>
                             <div class="education-card__meta">
-                                <time class="education-card__period" datetime="2026">2026 — Em andamento</time>
+                                <span class="education-card__period"><time datetime="2026">2026</time> — Em andamento</span>
                             </div>
                             <p class="education-card__description">
                                 Programa de formação prática em desenvolvimento Full Stack, envolvendo Java, Groovy, TypeScript, PostgreSQL, APIs REST, testes automatizados, Clean Code, SOLID e colaboração em squad.
-                            </p>                            
+                            </p>
                         </article>
                     </div>
                 </div>
@@ -226,7 +235,7 @@
         </section>
     </main>
 
-    <footer class="footer" role="contentinfo">
+    <footer class="footer">
         <div class="container footer__inner">
             <p class="footer__copyright">&copy; 2026 Nelson Lima da Costa Junior. Todos os direitos reservados.</p>
             <p class="footer__note">Desenvolvido com HTML5, CSS3 e JavaScript puro.</p>

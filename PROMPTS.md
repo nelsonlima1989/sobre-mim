@@ -197,3 +197,235 @@ Não implemente novas funcionalidades nesta etapa.
 Não execute commit nem push.
 
 Aguarde minha aprovação.
+
+
+
+---
+
+## Prompt 4 — Análise do Projeto (2026-11-01)
+
+> Agente: Antigravity (Claude Sonnet 5.5). Etapa somente de leitura; nenhum arquivo foi alterado.
+
+Atue como um engenheiro de software sênior, especializado em
+desenvolvimento Front-end, HTML5, CSS3, JavaScript, responsividade,
+acessibilidade, Clean Code e boas práticas de desenvolvimento.
+
+CONTEXTO
+
+Estou desenvolvendo um portfólio pessoal chamado "sobre-mim",
+utilizando HTML, CSS e JavaScript.
+
+O projeto foi iniciado com outro agente de inteligência artificial
+(NVIDIA Nemotron 3 Ultra), utilizando o GitHub Copilot Chat.
+
+O objetivo é continuar o projeto existente, preservando todo o
+trabalho realizado anteriormente.
+
+ETAPA 1 — ANÁLISE DO PROJETO
+
+Analise a estrutura completa do projeto atualmente aberto no VS Code.
+
+Examine especialmente os seguintes arquivos:
+
+- index.html
+- style.css
+- script.js
+- README.md
+- PROMPTS.md
+- favicon.svg
+- favicon.ico
+
+Caso existam outros arquivos relevantes, inclua-os na análise.
+
+ETAPA 2 — AVALIAÇÃO TÉCNICA
+
+Verifique:
+
+1. Organização e estrutura do projeto.
+2. Qualidade e semântica do HTML.
+3. Organização e manutenção do CSS.
+4. Responsividade para dispositivos móveis, tablets e desktops.
+5. Qualidade e funcionamento do JavaScript.
+6. Acessibilidade e boas práticas.
+7. Possíveis problemas de desempenho.
+8. Links externos e navegação.
+9. Consistência entre o README e o código implementado.
+10. Documentação do histórico de desenvolvimento em PROMPTS.md.
+
+ATENÇÃO A PROBLEMAS JÁ IDENTIFICADOS
+
+Uma análise anterior identificou possíveis problemas de
+responsividade no CSS e inconsistências no README.
+
+Verifique se esses problemas realmente existem, apresente
+evidências e proponha as correções necessárias.
+
+LINKS PROFISSIONAIS CORRETOS
+
+GitHub:
+https://github.com/nelsonlima1989
+
+LinkedIn:
+https://www.linkedin.com/in/nelsonlima1989/
+
+Verifique se esses endereços estão corretamente configurados.
+
+ETAPA 3 — RELATÓRIO
+
+Apresente um relatório contendo:
+
+1. Resumo do estado atual do projeto.
+2. Funcionalidades já implementadas.
+3. Problemas encontrados, com indicação dos arquivos envolvidos.
+4. Melhorias recomendadas.
+5. Classificação das pendências por prioridade:
+   - Alta
+   - Média
+   - Baixa
+6. Plano de implementação dividido em etapas.
+
+REGRAS OBRIGATÓRIAS
+
+- NÃO modifique nenhum arquivo.
+- NÃO crie novos arquivos.
+- NÃO exclua arquivos existentes.
+- NÃO instale dependências.
+- NÃO execute comandos no terminal.
+- NÃO realize commits ou push.
+- NÃO altere configurações do Git.
+- NÃO implemente funcionalidades nesta etapa.
+- NÃO reescreva o projeto do zero.
+- NÃO considere problemas como confirmados sem verificar o código.
+
+Esta primeira etapa é exclusivamente de leitura e análise.
+
+Ao finalizar, apresente o relatório técnico e AGUARDE minha
+autorização antes de realizar qualquer alteração.
+
+---
+
+## Prompt 5 — Correções para Entrega (2026-11-01)
+
+> Agente: Antigravity (Claude Sonnet 5.5).
+
+Atue como engenheiro de software sênior e continue o projeto 'sobre-mim'. Você já fez a auditoria. Use o relatório anterior como base e não repita a análise. Objetivo é preparar para entrega. Corrija os problemas de responsividade, acessibilidade, JavaScript, favicon e documentação listados no relatório. Resolva navegação em telas pequenas com menu acessível e sem overflow, ajuste contrastes, teclado, foco, toque e ARIA, mantendo temas claro e escuro, simplifique JS apenas onde for comprovado, substitua o favicon .ico por um arquivo válido, atualize README para refletir o que está implementado e registre esta etapa no PROMPTS.md. Faça testes quando possível, sintaxe, responsividade em larguras comuns, navegação por teclado, contraste e console. Se algo não der pra testar, diga que ficou pendente. Não reescreva o projeto do zero, não adicione frameworks, não instale dependências desnecessárias, não altere meus dados, não mexa no Git, não faça commit, push nem publicação. Ao final, traga lista de arquivos modificados, correções feitas, testes executados, pendências e próximos passos para entrega. Aguarde minha revisão final.
+
+---
+
+> **Nota de rastreabilidade:** o texto do prompt de auditoria executado pelo agente anterior (mencionado no Prompt 3) não está disponível no histórico acessível e, por isso, não foi reconstruído aqui. O Prompt 4 acima é a análise de leitura realizada nesta continuação do projeto.
+
+
+
+---
+
+## Prompt 4 — Análise do Projeto (2026-11-01)
+
+> Agente: Antigravity (Claude Sonnet 5.5). Etapa somente de leitura; nenhum arquivo foi alterado.
+
+Atue como um engenheiro de software sênior, especializado em
+desenvolvimento Front-end, HTML5, CSS3, JavaScript, responsividade,
+acessibilidade, Clean Code e boas práticas de desenvolvimento.
+
+CONTEXTO
+
+Estou desenvolvendo um portfólio pessoal chamado "sobre-mim",
+utilizando HTML, CSS e JavaScript.
+
+O projeto foi iniciado com outro agente de inteligência artificial
+(NVIDIA Nemotron 3 Ultra), utilizando o GitHub Copilot Chat.
+
+O objetivo é continuar o projeto existente, preservando todo o
+trabalho realizado anteriormente.
+
+ETAPA 1 — ANÁLISE DO PROJETO
+
+Analise a estrutura completa do projeto atualmente aberto no VS Code.
+
+Examine especialmente os seguintes arquivos:
+
+- index.html
+- style.css
+- script.js
+- README.md
+- PROMPTS.md
+- favicon.svg
+- favicon.ico
+
+Caso existam outros arquivos relevantes, inclua-os na análise.
+
+ETAPA 2 — AVALIAÇÃO TÉCNICA
+
+Verifique:
+
+1. Organização e estrutura do projeto.
+2. Qualidade e semântica do HTML.
+3. Organização e manutenção do CSS.
+4. Responsividade para dispositivos móveis, tablets e desktops.
+5. Qualidade e funcionamento do JavaScript.
+6. Acessibilidade e boas práticas.
+7. Possíveis problemas de desempenho.
+8. Links externos e navegação.
+9. Consistência entre o README e o código implementado.
+10. Documentação do histórico de desenvolvimento em PROMPTS.md.
+
+ATENÇÃO A PROBLEMAS JÁ IDENTIFICADOS
+
+Uma análise anterior identificou possíveis problemas de
+responsividade no CSS e inconsistências no README.
+
+Verifique se esses problemas realmente existem, apresente
+evidências e proponha as correções necessárias.
+
+LINKS PROFISSIONAIS CORRETOS
+
+GitHub:
+https://github.com/nelsonlima1989
+
+LinkedIn:
+https://www.linkedin.com/in/nelsonlima1989/
+
+Verifique se esses endereços estão corretamente configurados.
+
+ETAPA 3 — RELATÓRIO
+
+Apresente um relatório contendo:
+
+1. Resumo do estado atual do projeto.
+2. Funcionalidades já implementadas.
+3. Problemas encontrados, com indicação dos arquivos envolvidos.
+4. Melhorias recomendadas.
+5. Classificação das pendências por prioridade:
+   - Alta
+   - Média
+   - Baixa
+6. Plano de implementação dividido em etapas.
+
+REGRAS OBRIGATÓRIAS
+
+- NÃO modifique nenhum arquivo.
+- NÃO crie novos arquivos.
+- NÃO exclua arquivos existentes.
+- NÃO instale dependências.
+- NÃO execute comandos no terminal.
+- NÃO realize commits ou push.
+- NÃO altere configurações do Git.
+- NÃO implemente funcionalidades nesta etapa.
+- NÃO reescreva o projeto do zero.
+- NÃO considere problemas como confirmados sem verificar o código.
+
+Esta primeira etapa é exclusivamente de leitura e análise.
+
+Ao finalizar, apresente o relatório técnico e AGUARDE minha
+autorização antes de realizar qualquer alteração.
+
+---
+
+## Prompt 5 — Correções para Entrega (2026-11-01)
+
+> Agente: Antigravity (Claude Sonnet 5.5).
+
+Atue como engenheiro de software sênior e continue o projeto 'sobre-mim'. Você já fez a auditoria. Use o relatório anterior como base e não repita a análise. Objetivo é preparar para entrega. Corrija os problemas de responsividade, acessibilidade, JavaScript, favicon e documentação listados no relatório. Resolva navegação em telas pequenas com menu acessível e sem overflow, ajuste contrastes, teclado, foco, toque e ARIA, mantendo temas claro e escuro, simplifique JS apenas onde for comprovado, substitua o favicon .ico por um arquivo válido, atualize README para refletir o que está implementado e registre esta etapa no PROMPTS.md. Faça testes quando possível, sintaxe, responsividade em larguras comuns, navegação por teclado, contraste e console. Se algo não der pra testar, diga que ficou pendente. Não reescreva o projeto do zero, não adicione frameworks, não instale dependências desnecessárias, não altere meus dados, não mexa no Git, não faça commit, push nem publicação. Ao final, traga lista de arquivos modificados, correções feitas, testes executados, pendências e próximos passos para entrega. Aguarde minha revisão final.
+
+---
+
+> **Nota de rastreabilidade:** o texto do prompt de auditoria executado pelo agente anterior (mencionado no Prompt 3) não está disponível no histórico acessível e, por isso, não foi reconstruído aqui. O Prompt 4 acima é a análise de leitura realizada nesta continuação do projeto.
