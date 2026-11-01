@@ -631,6 +631,11 @@ ul, ol {
     box-shadow: var(--shadow-md);
 }
 
+/* Espaçamento entre cards consecutivos */
+.project-card + .project-card {
+    margin-top: var(--space-6);
+}
+
 .project-card__header {
     margin-bottom: var(--space-4);
 }
